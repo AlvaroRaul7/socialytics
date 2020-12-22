@@ -22,7 +22,7 @@
 <div *ngIf="!loading && !stats">
   <nz-result nzStatus="403">
     <div nz-result-extra>
-      <button nz-button nzType="primary" (click)="focusUsernameSearch()">Search for a user to view statistics</button>
+      <button nz-button nzType="primary" (click)="focusUsernameSearch()">Busca a un usuario para ver sus estadisticas</button>
     </div>
   </nz-result>
 </div>
@@ -101,11 +101,11 @@
 
 
     <div class="row">
-      <app-gallery [title]="'Most Liked Media'" [galleryMedia]="mostLikedMedia" [sampleSize]="sampleSize"
+      <app-gallery [title]="'Publicaciones con mas like'" [galleryMedia]="mostLikedMedia" [sampleSize]="sampleSize"
         [term]="'likes'" (toggleModal)="toggleModal($event, tplTitle, tplFooter)" (externalUrl)="externalUrl($event)"
         class="col-md-12 col-lg-6">
       </app-gallery>
-      <app-gallery [title]="'Most Commented Media'" [galleryMedia]="mostCommentedMedia" [sampleSize]="sampleSize"
+      <app-gallery [title]="'Publicaciones mas comentadas'" [galleryMedia]="mostCommentedMedia" [sampleSize]="sampleSize"
         [term]="'comments'" (toggleModal)="toggleModal($event, tplTitle, tplFooter)" (externalUrl)="externalUrl($event)"
         class="col-md-12 col-lg-6">
       </app-gallery>
@@ -115,7 +115,7 @@
       <div class="col-12">
         <div class="card mb-4 box-shadow">
           <div class="card-header text-center">
-            <h6>Posts by day of week</h6>
+            <h6>Posts por dia de la semana </h6>
           </div>
           <div class="card-body text-center">
             <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
@@ -141,16 +141,16 @@
 </ng-template>
 
 <ng-template #tplFooter>
-  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
   <button type="button" class="btn btn-primary"
-    (click)="externalUrl('http://www.instagram.com/p/' + expandPost.node.shortcode)">Open in
+    (click)="externalUrl('http://www.instagram.com/p/' + expandPost.node.shortcode)">Abrir en
     Instagram</button>
 </ng-template>
 
 <ng-template #tplError>
-  Looks like the username is invalid or Instagram is blocking our request.
+  Parece que el usuario es invalido o Instagram nos bloquea.
 </ng-template>
 
 <ng-template #tplUserError>
-    A user with the specified username does not exist.
+    El usuario especificado no existe
   </ng-template>
